@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoManager</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="resources/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="bg-dark">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <nav
+                class="d-flex flex-column flex-sm-row navbar navbar-expand-md navbar-dark bg-dark justify-content-between"
+              >
+                <div>
+                  <h4 class="h4 text-white todo">
+                    <span class="">ToDoManager</span>
+                    <i class="fas fa-clipboard-list logo todo"></i>
+                  </h4>
+                </div>
+                <a
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#left-sidebar"
+                >
+                  <span class="white">ToDoManager</span>
+                  <i class="fas fa-clipboard-list logo"></i>
+                </a>
+                <div style="width: 50%;">
+                  <form class="form-inline" action="">
+                    <input
+                      class="form-control form-control-sm w-100"
+                      type="text"
+                      placeholder="Search"
+                    />
+                    <!--<button class="btn btn-warning text-dark btn-sm" type="submit">Search</button>-->
+                  </form>
+                </div>
+                <div class="logo">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="container mt-5 vheight">
+      <div class="row">
+        <div
+          class="col-12 col-md-3 collapse navbar-collapse justify-content-start d-md-block"
+          id="left-sidebar"
+        >
+          <div
+            class="nav flex-column nav-pills"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="v-pills-home-tab"
+              data-toggle="pill"
+              href="#v-pills-home"
+              role="tab"
+              aria-controls="v-pills-home"
+              aria-selected="true"
+              >All</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-profile-tab"
+              data-toggle="pill"
+              href="#v-pills-profile"
+              role="tab"
+              aria-controls="v-pills-profile"
+              aria-selected="false"
+              >Important</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-messages-tab"
+              data-toggle="pill"
+              href="#v-pills-messages"
+              role="tab"
+              aria-controls="v-pills-messages"
+              aria-selected="false"
+              >Today</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-settings-tab"
+              data-toggle="pill"
+              href="#v-pills-settings"
+              role="tab"
+              aria-controls="v-pills-settings"
+              aria-selected="false"
+              >Next 7 Days</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-settings-tab"
+              data-toggle="pill"
+              href="#v-pills-settings"
+              role="tab"
+              aria-controls="v-pills-settings"
+              aria-selected="false"
+              >Private</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-settings-tab"
+              data-toggle="pill"
+              href="#v-pills-settings"
+              role="tab"
+              aria-controls="v-pills-settings"
+              aria-selected="false"
+              >Shared With...</a
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-home"
+              role="tabpanel"
+              aria-labelledby="v-pills-home-tab"
+            >
+              <!-- <ul class="list-group"> 
+                  
+                    <li class="list-group-item">
+                        <div class="form-check d-flex">
+                           <label class="form-check-label" for="defaultCheck1">
+                             Complete lab-2
+                            </label>
+                            
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            
+                            <span class="ml-auto badge badge-warning ">University</span>
+                            <small class="ml-1">Fr 27 March 2020</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item ">
+                        <div class="form-check d-flex align-items-center justify-content-between">
+                            <input class="form-check-input " type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                 Purchase some e-Course
+                            </label>
+                            <span class="mx-auto text-success"><i class="fas fa-user"></i></span>
+                            <span class="ml-auto badge badge-success">Persoanl</span>
+                            <small class="ml-1">Fr 27 March 2020</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item ">
+                        <div class="form-check d-flex align-items-center justify-content-between">
+                            <input class="form-check-input " type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                 Study O.S Course
+                            </label>
+                            <span class="ml-auto badge badge-success">Persoanl</span>
+                            <small class="ml-1">Fr 27 March 2020</small>
+                        </div>
+                      
+                    </li> 
+                  </ul> -->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-profile"
+              role="tabpanel"
+              aria-labelledby="v-pills-profile-tab"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              deserunt vitae ullam eum alias? Unde, fuga quae. Ullam, vel saepe,
+              odio minus laboriosam, eveniet debitis incidunt soluta assumenda
+              quis voluptates.
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-messages"
+              role="tabpanel"
+              aria-labelledby="v-pills-messages-tab"
+            >
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis repellat pariatur animi in blanditiis fugit quam
+              laborum, illum odit temporibus fuga, et assumenda molestias,
+              aliquam vero. Quia sit vitae nisi.
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-settings"
+              role="tabpanel"
+              aria-labelledby="v-pills-settings-tab"
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
+              sequi labore debitis laborum sunt nisi inventore corrupti, ullam
+              sint error consequuntur quidem saepe officiis, possimus nobis
+              accusamus praesentium iste iusto.
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-info btn-position"
+          data-toggle="modal"
+          data-target="#newTask"
+        >
+          &plus;
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="newTask"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="newTask"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newTask">Insert a New Task</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="">
+                  <div class="form-group">
+                    <label for="desc">Description: </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="desc"
+                      id="desc"
+                      required
+                    />
+
+                    <label for="deadline">Deadline: </label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="desc"
+                      id="deadline"
+                    />
+
+                    <label for="pr-Name">ProjectName: </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="desc"
+                      id="pr-Name"
+                    />
+                    <div class="mt-2">
+                      <select id="state" class="form-control">
+                        <option value="shared" selected>Sahred</option>
+                        <option value="private">Private</option>
+                      </select>
+                    </div>
+
+                    <div class="mt-2">
+                      <input type="checkbox" id="imp" />
+                      <label for="imp"
+                        >Check me If this task is important</label
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
+                <button type="button" class="btn btn-primary" id="Insert">
+                  Insert
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="resources/js/main.js"></script>
+  </body>
+</html>

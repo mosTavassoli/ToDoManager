@@ -1,0 +1,63 @@
+html{
+    font-family:"Lato" ;
+}
+.logo{
+    font-size: 35px;
+    color:  #e67e22 ;
+}
+.vheight{
+    min-height: 50vh;
+    position: relative;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color:#204051;
+    color:  #cae8d5;
+}
+
+a{
+    color: black;
+}
+a:hover{
+    color: #3b6978;
+}
+
+@media (max-width:575px){
+.brand{
+    display: none;
+}
+.logo{
+    font-size: 25px;
+    color:  #e67e22 ;
+}
+.todo{
+    display: none;
+    color: white;
+}
+.white{
+    color: white;
+}
+}
+
+.btn-position{
+    position: absolute;
+    right:0;
+    bottom:0;
+}
+
+@media (max-width:767px){
+    .todo{
+        display: none;
+    }
+   .todo,.logo-m-main{
+        text-align: center;
+    }
+    .logo-m{
+        font-size:25px ;
+    }
+    .logo-m-main a i{
+       font-size: 30px;
+    }
+    .white{
+        color: white;
+    }
+}
