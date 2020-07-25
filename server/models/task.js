@@ -6,7 +6,7 @@ class Task {
     privateTask,
     deadline,
     project,
-    completed
+    completed = false// this is another way to define default value in ES6
   ) {
     if (id) this.id = id;
 
@@ -17,7 +17,7 @@ class Task {
     if (deadline) this.deadline = deadline;
     if (project) this.project = project;
 
-    this.completed = completed || false;
+    this.completed = completed // "|| false" can be added here in order to define default velue
   }
 }
 

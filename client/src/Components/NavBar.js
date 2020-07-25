@@ -2,7 +2,6 @@ import React from 'react';
 
 const NavBar = () =>{
     return (
-<container>
 <nav className="d-flex flex-column flex-sm-row navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
 
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#left-sidebar" aria-controls="left-sidebar" aria-expanded="false" aria-label="Toggle sidebar">
@@ -28,42 +27,6 @@ const NavBar = () =>{
       </div>
     
     </nav>
-</container>
-
-
-
-        // <nav
-        //         className="d-flex flex-column flex-sm-row navbar navbar-expand-md navbar-dark bg-dark justify-content-between"
-        //       >
-        //         <div>
-        //           <h4 className="h4 text-white todo">
-        //             <span className="">ToDoManager</span>
-        //             <i className="fas fa-clipboard-list logo todo"></i>
-        //           </h4>
-        //         </div>
-        //         <a
-        //           className="navbar-toggler"
-        //           type="button"
-        //           data-toggle="collapse"
-        //           data-target="#left-sidebar"
-        //           href="#"
-        //         >
-        //           <span className="white">ToDoManager</span>
-        //           <i className="fas fa-clipboard-list logo"></i>
-        //         </a>
-        //         <div style="width: 50%;">
-        //           <form className="form-inline" action="">
-        //             <input
-        //               className="form-control form-control-sm w-100"
-        //               type="text"
-        //               placeholder="Search"
-        //             />
-        //           </form>
-        //         </div>
-        //         <div className="logo">
-        //           <i className="fas fa-user-circle"></i>
-        //         </div>
-        //       </nav>
     );
 }
 
