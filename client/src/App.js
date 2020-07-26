@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Filters from './Components/Filter';
+import TodoList from './Components/TodoList';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -67,25 +68,65 @@ class App extends React.Component {
     }
   }
 
+  addOrEditTask = (task) => {
+    if(!task.id){
+      //ADD
+      API.addTask(task)
+        .then(() => {
+          //get the updated list of tasks from the server
+          API.getTasks().then((tasks) => this.setState({tasks: tasks, filter: 'All',projects: this.getProjects(tasks)}));
+        })
+        .catch((errorObj) => {
+            
+        });
+    } else {
+      //UPDATE
+      API.updateTask(task)
+        .then(() => {
+          //get the updated list of tasks from the server
+          API.getTasks().then((tasks) => this.setState({tasks: tasks, filter: 'All',projects: this.getProjects(tasks)}));
+        })
+        .catch((errorObj) => {
+            
+        });
+    }
+  }
+
+  editTask = (task) => {
+    this.toggleModal();
+    this.setState({editedTask: task});
+  }
+
+  deleteTask = (task) => {
+    API.deleteTask(task.id)
+      .then(() => {
+        //get the updated list of tasks from the server
+        API.getTasks().then((tasks) => this.setState({tasks: tasks, filter: 'All',projects: this.getProjects(tasks)}));
+      })
+      .catch((errorObj) => {
+
+      });
+  }
+
 
   render(){
     return(
       <React.Fragment>
  <NavBar/> 
  <Container fluid>
-          <Row className="vheight-100 mt-5">
+          <Row className="vheight-100">
             <Collapse in={this.state.openMobileMenu}>
               <Col sm={4} bg="light" id="left-sidebar" className="collapse d-sm-block below-nav">
                 <Filters projects = {this.state.projects} filterTasks = {this.filterTasks} activeFilter = {this.state.filter}/>
               </Col>
             </Collapse>
-            {/* <Col sm={8} className="below-nav">
+            <Col sm={8} className="below-nav">
             <h1>{this.state.filter}</h1>
             <TodoList tasks = {this.state.tasks} editTask = {this.editTask} updateTask = {this.addOrEditTask} deleteTask = {this.deleteTask} />
             <Button variant="success" size="lg" className="fixed-right-bottom" onClick={this.toggleModal}>&#43;</Button>
             </Col>
 
-            {this.state.modalOpen && <TodoForm modalOpen={this.state.modalOpen} toggleModal={this.toggleModal} addOrEditTask={this.addOrEditTask} task={this.state.editedTask}/>} */}
+            {/* {this.state.modalOpen && <TodoForm modalOpen={this.state.modalOpen} toggleModal={this.toggleModal} addOrEditTask={this.addOrEditTask} task={this.state.editedTask}/>} */}
           </Row>
         </Container>
 
